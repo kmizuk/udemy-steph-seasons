@@ -1,4 +1,5 @@
 import React from 'react';
+import './SeasonDisplay.css';
 
 const seasonConfig = {
     summer: {
@@ -26,12 +27,14 @@ const SeasonDisplay = (props) => {
 
     return (
         <React.Fragment>
-            <div>Latitude:{props.lat}</div>
-            <br />
-            <i className={`huge ${iconName} icon`} />
-            <h1>{text}</h1>
-            <i className={`huge ${iconName} icon`} />
-            <br />
+            <div className={"center"}>Latitude:{props.lat}</div>
+            <div className={`season-display ${season}`}>
+                <br />
+                <i className={`icon-left huge ${iconName} icon`} />
+                <h1>{text}</h1>
+                <i className={`icon-right huge ${iconName} icon`} />
+                <br />
+            </div>
         </React.Fragment>
     );
 }
